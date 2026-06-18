@@ -1,0 +1,38 @@
+{
+  "sac_pid_sudden_braking": {
+    "mean_reward": 0.9610669567895078,
+    "min_reward": -0.28603820925183054,
+    "front_ride_height_rmse_mm": 2.186002781856995,
+    "rear_ride_height_rmse_mm": 3.218240544342214,
+    "max_abs_pitch_deg": 0.7822932778667845,
+    "mean_contact_quality": 0.915402511432614,
+    "min_contact_quality": 0.2879010216373214
+  },
+  "sac_pid_sudden_acceleration": {
+    "mean_reward": 0.9686302754588053,
+    "min_reward": -0.2647757966498794,
+    "front_ride_height_rmse_mm": 2.1906414269964274,
+    "rear_ride_height_rmse_mm": 2.9682144732104963,
+    "max_abs_pitch_deg": 0.7803203893028364,
+    "mean_contact_quality": 0.9185039646368535,
+    "min_contact_quality": 0.29974169173259785
+  },
+  "sac_pid_rough_track": {
+    "mean_reward": 0.9830721357933598,
+    "min_reward": -0.5744884471478746,
+    "front_ride_height_rmse_mm": 1.9731804501686798,
+    "rear_ride_height_rmse_mm": 3.755180531100939,
+    "max_abs_pitch_deg": 0.7491293143747674,
+    "mean_contact_quality": 0.9611581930544645,
+    "min_contact_quality": 0.20333846396897923
+  },
+  "sac_pid_repeated_bumps": {
+    "mean_reward": 0.9854335791281648,
+    "min_reward": -0.28145372855494655,
+    "front_ride_height_rmse_mm": 2.191440473773573,
+    "rear_ride_height_rmse_mm": 3.1921007850966254,
+    "max_abs_pitch_deg": 0.7819290994874677,
+    "mean_contact_quality": 0.9656341601752699,
+    "min_contact_quality": 0.29021309476895474
+  }
+}

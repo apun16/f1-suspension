@@ -73,4 +73,3 @@ def summarize_rollout(rollout: Rollout) -> dict[str, float]:
         "mean_contact_quality": float(np.mean([front_c, rear_c])),
         "min_contact_quality": float(np.min([front_c, rear_c])),
     }
-

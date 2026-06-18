@@ -19,6 +19,8 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--model-path", type=Path, default=Path("models/sac_hybrid_suspension"))
     parser.add_argument("--log-dir", type=Path, default=Path("runs/sac_hybrid"))
+    parser.add_argument("--checkpoint-freq", type=int, default=5_000)
+    parser.add_argument("--eval-freq", type=int, default=10_000)
     args = parser.parse_args()
 
     args.model_path.parent.mkdir(parents=True, exist_ok=True)
@@ -46,7 +48,7 @@ def main() -> None:
     )
 
     checkpoint = CheckpointCallback(
-        save_freq=20_000,
+        save_freq=args.checkpoint_freq,
         save_path=str(args.model_path.parent),
         name_prefix="sac_hybrid_checkpoint",
     )
@@ -54,7 +56,7 @@ def main() -> None:
         eval_env,
         best_model_save_path=str(args.model_path.parent / "best"),
         log_path=str(args.log_dir / "eval"),
-        eval_freq=10_000,
+        eval_freq=args.eval_freq,
         deterministic=True,
     )
 

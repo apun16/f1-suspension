@@ -44,6 +44,5 @@ Four SAC+PID demos:
 ## Failure modes 
 
 - Over-stiff suspension: holds ride height but destroys contact patch
-- Over-aggressive gains: oscillation after bumps
 - Reward hacking: trims the target height to reduce immediate error but worsens contact
-- Under-trained policy: behaves like a noisy PID tuner and performs worse than fixed PID
+- Under-trained policy: behaves inconsistently and performs worse than fixed PID
