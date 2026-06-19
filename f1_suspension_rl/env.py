@@ -27,12 +27,6 @@ class SuspensionParams:
 
 
 class F1SuspensionEnv(gym.Env):
-    """Hybrid SAC-tuned PID active suspension environment.
-
-    SAC actions tune PID gains and setpoint trims. The PID layer converts the
-    tuned parameters into front and rear active suspension forces.
-    """
-
     metadata = {"render_modes": ["rgb_array"], "render_fps": 50}
 
     def __init__(

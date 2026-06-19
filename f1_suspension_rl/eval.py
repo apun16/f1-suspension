@@ -16,8 +16,6 @@ class Rollout:
 
 
 class FixedPIDPolicy:
-    """Zero SAC action means fixed midrange PID gains and no setpoint trim."""
-
     def predict(self, obs, deterministic: bool = True):
         batch = np.asarray(obs)
         if batch.ndim == 2:
@@ -30,9 +28,21 @@ def rollout_policy(
     scenario: str,
     seed: int = 7,
     episode_seconds: float = 8.0,
+    settled_start: bool = True,
 ) -> Rollout:
     env = F1SuspensionEnv(scenario=scenario, seed=seed, episode_seconds=episode_seconds)
     obs, _ = env.reset(seed=seed)
+    if settled_start:
+        env.z = 0.0
+        env.z_dot = 0.0
+        env.pitch = 0.0
+        env.pitch_rate = 0.0
+        env.prev_action[:] = 0.0
+        env.last_forces[:] = 0.0
+        env.front_pid.reset()
+        env.rear_pid.reset()
+        env.pitch_pid.reset()
+        obs = env._obs()
     observations: list[np.ndarray] = []
     actions: list[np.ndarray] = []
     rewards: list[float] = []
